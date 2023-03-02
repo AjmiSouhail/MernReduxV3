@@ -1,0 +1,84 @@
+{  "swagger": "2.0",
+    "info": {
+    "version": "1.0.0", 
+    "title": "My User Project CRUD",
+  "description": "My User Project Application API",
+  "license": {
+    "name": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+  }
+},
+"host": "localhost:8002",
+"basePath": "/",
+"tags": [
+  {
+    "name": "Users",
+    "description": "API for users in the system"
+  }
+],
+"schemes": ["http"],
+"consumes": ["application/json"],
+"produces": ["application/json"],
+"paths": {
+  "/employe": {
+    "get": {
+      "tags" : ["Employes"],
+      "summary": "Get all user information",
+      "description": "Get information for all users",
+      "responses": {
+        "200": {
+          "description": "All user information retrieved successfully",
+          "content": {
+            "application/json": {
+              "schema": {
+                  "$ref": "#/definitions/Employes"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+},
+"definitions": {
+    "Employe": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "contactNumber": {
+          "type": "number"
+        },
+        "age": {
+          "type": "number"
+        },
+        "dob": {
+          "type": "string"
+        },
+        "salary": {
+          "type": "number"
+        },
+        "address": {
+          "type": "string"
+        }
+      }     
+  },
+  "Employes": {
+    "type": "array",
+    "$ref": "#/definitions/Employe"
+  }
+}
+}
